@@ -136,7 +136,7 @@ if game.PlaceId == 8343259840 then
 			local CastPoints, IgnoreList = {PlayerRoot.Position, LocalPlayerCharacter, PlayerCharacter}, {LocalPlayerCharacter, PlayerCharacter}
 			local ObscuringObjects = #GetPartsObscuringTarget(Cam, CastPoints, IgnoreList)
 
-			return ((ObscuringObjects == 0 and true) or (ObscuringObjects > 0 and false))
+			return (ObscuringObjects == 0 and true) or (ObscuringObjects > 0 and false)
 		end
 
 		local function GetClosestPlayer()
@@ -288,7 +288,7 @@ if game.PlaceId == 8343259840 then
 										end
 									end
 
-									DistanceText.Text = "["..tostring(ItemDistance).."]"
+									DistanceText.Text = "[" .. tostring(ItemDistance) .. "]"
 								else
 									ItemName.Visible = false
 									RarityText.Visible = false
@@ -412,7 +412,7 @@ if game.PlaceId == 8343259840 then
 										end
 									end
 
-									DistanceText.Text = "["..tostring(ItemDistance).."]"
+									DistanceText.Text = "[" .. tostring(ItemDistance) .. "]"
 
 									if Vault.Values.Broken.Value == false then
 										-- StatusText.Text = "NOT BROKEN"
@@ -517,7 +517,7 @@ if game.PlaceId == 8343259840 then
 									-- StatusText.Visible = true
 									-- DistanceText.Visible = true
 
-									DistanceText.Text = "["..tostring(ItemDistance).."]"
+									DistanceText.Text = "[" .. tostring(ItemDistance) .. "]"
 
 									if Register.Values.Broken.Value == false then
 										-- StatusText.Text = "NOT BROKEN"
@@ -642,11 +642,11 @@ if game.PlaceId == 8343259840 then
 
 		game.Players.PlayerAdded:Connect(function(AdminUserCheck)
 			if AdminUserCheck.UserId == 68246168 or AdminUserCheck.UserId == 955294 or AdminUserCheck.UserId == 1095419 or AdminUserCheck.UserId == 50585425 or AdminUserCheck.UserId == 48405917 or AdminUserCheck.UserId == 9212846 or AdminUserCheck.UserId == 47352513 or AdminUserCheck.UserId == 48058122 then
-				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
+				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n" .. AdminUserCheck.Name .. ", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
 			elseif AdminUserCheck.UserId == 42066711 or AdminUserCheck.UserId == 513615792 then
-				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n"..AdminUserCheck.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 120 })
+				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n" .. AdminUserCheck.Name .. ", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 120 })
 			elseif AdminUserCheck.UserId == 151691292 or AdminUserCheck.UserId == 92504899 or AdminUserCheck.UserId == 31967243 then
-				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n"..AdminUserCheck.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
+				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n" .. AdminUserCheck.Name .. ", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
 			elseif AdminUserCheck.UserId == 29761878 then
 				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
 			end
@@ -654,11 +654,11 @@ if game.PlaceId == 8343259840 then
 
 		for i, v in pairs(game.Players:GetPlayers()) do
 			if v.UserId == 68246168 or v.UserId == 955294 or v.UserId == 1095419 or v.UserId == 50585425 or v.UserId == 48405917 or v.UserId == 9212846 or v.UserId == 47352513 or v.UserId == 48058122 then
-				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
+				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Mod Alert\n" .. v.Name .. ", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
 			elseif v.UserId == 42066711 or v.UserId == 513615792 then
-				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n"..v.Name..", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 120 })
+				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Contractors Alert\n" .. v.Name .. ", Is in the server"; Icon = "rbxassetid://8426126371"; Duration = 120 })
 			elseif v.UserId == 151691292 or v.UserId == 92504899 or v.UserId == 31967243 then
-				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n"..v.Name..", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
+				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Devs Alert\n" .. v.Name .. ", Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
 			elseif v.UserId == 29761878 then
 				StarterGui:SetCore("SendNotification", {Title = "FemWare"; Text = "Owner Alert\nRvvz, Is in the server."; Icon = "rbxassetid://8426126371"; Duration = 120 })
 			end
@@ -672,8 +672,9 @@ if game.PlaceId == 8343259840 then
 				getupvalue(getrenv()._G.S_Take, 2),
 				function(v1, ...)
 					if (Settings.InfiniteStamina) then -- god damn the roblox engine is so shit
-					v1 = 0
-				end
+						v1 = 0
+					end
+
 					return oldStamina(v1, ...)
 				end
 			)
@@ -876,7 +877,7 @@ if game.PlaceId == 8343259840 then
 		Player.Character.ChildAdded:Connect(function(Item)
 			if Item:IsA("Tool") then
 				for i,v in pairs(getgc(true)) do
-					if type(v) == 'table' and rawget(v, 'EquipTime') then
+					if type(v) == "table" and rawget(v, "EquipTime") then
 						if Settings.GunMods.NoRecoil == true then
 							v.Recoil = 0
 							v.CameraRecoilingEnabled = false
@@ -1179,7 +1180,7 @@ if game.PlaceId == 8343259840 then
 
 			game:GetService("UserInputService").JumpRequest:connect(function()
 				if Settings.SpaceJump == true then
-					game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+					game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass"Humanoid":ChangeState("Jumping")
 				end
 			end)
 		end)
@@ -1359,14 +1360,14 @@ if game.PlaceId == 8343259840 then
 
 			for i, v in pairs(game:GetService("ReplicatedStorage").Storage.HitStuff.Main:GetDescendants()) do
 				if v:IsA("Sound") then
-					v.SoundId = "rbxassetid://"..SelectedId
+					v.SoundId = "rbxassetid://" .. SelectedId
 				end
 			end
 
 
 			if Player.PlayerGui:FindFirstChild("MouseGUI") then
-				Player.PlayerGui:FindFirstChild("MouseGUI").HitmarkerSound.SoundId = "rbxassetid://"..SelectedId
-				Player.PlayerGui:FindFirstChild("MouseGUI").HeadshotSound.SoundId = "rbxassetid://"..SelectedId
+				Player.PlayerGui:FindFirstChild("MouseGUI").HitmarkerSound.SoundId = "rbxassetid://" .. SelectedId
+				Player.PlayerGui:FindFirstChild("MouseGUI").HeadshotSound.SoundId = "rbxassetid://" .. SelectedId
 			end
 		end)
 
@@ -1457,7 +1458,7 @@ if game.PlaceId == 8343259840 then
 		end)
 
 		MainS:AddButton("WallBang", function()
-			game:service[[Workspace]]:FindFirstChild('Map'):FindFirstChild('Parts'):FindFirstChild('M_Parts').Parent = game:service[[Workspace]]:FindFirstChild('Characters')
+			game:service[[Workspace]]:FindFirstChild("Map"):FindFirstChild("Parts"):FindFirstChild("M_Parts").Parent = game:service[[Workspace]]:FindFirstChild("Characters")
 		end)
 		-- #endregion
 
@@ -1983,10 +1984,6 @@ if game.PlaceId == 8343259840 then
 			TeleportArea(CFrame.new(-4776.9521484375, -201.26490783691406, -961.081298828125))
 		end)
 
-
-
-
-
 		TeleportAreas2:AddButton("Vibin Hideout", function()
 			TeleportArea(CFrame.new(-4466.81689453125, 23.555461883544922, -437.17169189453125))
 		end)
@@ -2035,10 +2032,6 @@ if game.PlaceId == 8343259840 then
 			TeleportArea(CFrame.new(-4600.34619140625, 3.899278163909912, -694.621826171875))
 		end)
 
-
-
-
-
 		TeleportAreas3:AddButton("Dealer 1", function()
 			TeleportArea(CFrame.new(-4268.42626953125, 3.8942785263061523, 95.84049987792969))
 		end)
@@ -2058,10 +2051,6 @@ if game.PlaceId == 8343259840 then
 		TeleportAreas3:AddButton("Dealer 5", function()
 			TeleportArea(CFrame.new(-4457.71142578125, 3.8988072872161865, -537.0403442382812))
 		end)
-
-
-
-
 
 		TeleportAreas4:AddButton("ATM 1", function()
 			TeleportArea(CFrame.new( -4458.44140625, 3.8995916843414307, -447.21044921875))
@@ -2114,7 +2103,6 @@ if game.PlaceId == 8343259840 then
 		N:SendKeyEvent(true, "One", false, game)
 		wait(1)
 		N:SendKeyEvent(true, "One", false, game)
-
 	end)
 
 	if not Success and Error then
