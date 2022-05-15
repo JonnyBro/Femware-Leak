@@ -289,7 +289,7 @@ function boxBase:Update()
                 if Vis5 then
                     self.Components.Name.Visible = true
                     self.Components.Name.Position = Vector2.new(TagPos.X, TagPos.Y)
-                    self.Components.Name.Text = self.Name
+                    self.Components.Name.Text = self.DisplayName .. " (" .. self.Name .. ")"
                     self.Components.Name.Color = color
                 else
                     self.Components.Name.Visible = false
